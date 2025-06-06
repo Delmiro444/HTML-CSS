@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xbytes Soluções - Clone Educativo</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: #fff;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icons a img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .social-icons a:hover {
+      opacity: 0.7;
+    }
+
+    .contact-info {
+      text-align: right;
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Navegação Principal */
+    header.top-header {
+      background: #121212;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 42px; /* altura da top-bar */
+      z-index: 1000;
+    }
+
+    .top-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: #00bfff;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(to right, #0059ff, #007bff);
+      color: #fff;
+      padding: 160px 0 100px;
+    }
+
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h2 {
+      font-size: 36px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    .hero .btn {
+      background: #fff;
+      color: #0059ff;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .hero-image {
+      flex: 1;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .hero .container {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+      }
+
+      .hero-content {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-image {
+        max-width: 50%;
+        text-align: right;
+      }
+    }
+
+    /* Serviços */
+    .services {
+      background: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #f1f1f1;
+      padding: 25px;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      max-width: 300px;
+    }
+
+    /* Portfólio */
+    .portfolio {
+      background: #eee;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 30%;
+      border-radius: 10px;
+      max-width: 300px;
+    }
+
+    /* Rodapé */
+    footer {
+      background: #121212;
+      color: #ccc;
+      padding: 50px 0;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-column h4 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      border-top: 1px solid #333;
+      padding-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="social-icons">
+       
+      </div>
+      <div class="contact-info">
+        Email: contato@xbytes.com | Tel: (11) 99999-9999
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="top-header">
+    <div class="container">
+      <div class="logo">Xbytes Soluções</div>
+      <nav>
+        <div class="nav">
+          <a href="#">Início</a>
+          <a href="#">Serviços</a>
+          <a href="#">Portfólio</a>
+          <a href="#">Blog</a>
+          <a href="#">Contato</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero com imagem à direita -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Transformamos ideias em soluções comerciais</h2>
+          <p>Consultorias profissionais, organização das contas e fiscalidade, marketing digital e muito mais.</p>
+          <a href="#" class="btn">Solicite um orçamento</a>
+        </div>
+        <div class="hero-image">
+          <img src="calculos.jpg" alt="Imagem destaque">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section class="services">
+    <div class="container">
+      <h3>Nossos Serviços</h3>
+      <div class="cards">
+        <div class="card">
+          <h4>Criação de Sites</h4>
+          <p>Sites modernos, responsivos e otimizados.</p>
+        </div>
+        <div class="card">
+          <h4>Liquidação de contas</h4>
+          <p>Cuidamos dos seus problemas de Liquidação, não submetes a estresses nos garantimos segurança e contas assiduamente pagas com uma melhor gestão. </p>
+        </div>
+        <div class="card">
+          <h4>Marketing Digital</h4>
+          <p>Google Ads, SEO e redes sociais para atrair mais clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfólio -->
+  <section class="portfolio">
+    <div class="container">
+      <h3>Projetos Recentes</h3>
+      <div class="gallery">
+        <img src="jovens.jpg" alt="Projeto 1" />
+        <img src="index.jpg" alt="Projeto 2" />
+        <img src="graficos.jpg" alt="Projeto 3" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Carreiras</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#">Sites</a></li>
+            <li><a href="#">E-commerce</a></li>
+            <li><a href="#">Consultoria</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Redes Sociais</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Xbytes Soluções. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
